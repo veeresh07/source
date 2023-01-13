@@ -6,6 +6,8 @@ typedef struct Node{
 	struct Node *next;
 }node_t;
 
+#define TEST_SLL_LOOP 0
+
 /* 
  *this fuction will create initiate the node of type node_t.
  *retrun the node 'start'
@@ -281,7 +283,7 @@ int detectloop(node_t *start)
         fast_p  = fast_p->next->next;/* move fast_p by two*/
         if (slow_p == fast_p) 
         { 
-           printf("found foop!!!. @ mem location %p\n\n",slow_p); 
+           printf("found loop!!!. @ mem location %p\n\n",slow_p); 
            return 1; 
         } 
     } 
@@ -320,13 +322,17 @@ int main()
 	print_list(head);
 
 	/* this part of code is used to test detection of loop inside linked list
+	 * enalble it by updating #define TEST_SLL_LOOP at the begging oh the file
+	 */
+#if TEST_SLL_LOOP
 	head = add_head(head, 10);
 	head = add_head(head, 20);
 	head = add_tail(head,90);
 	head = add_tail(head,80);
 	head->next->next->next->next = head; 
-    detectloop(head);
-    print_list(head);*/
+	detectloop(head);
+#endif
+
 	printf("exiting function: %s\n",__FUNCTION__);
 	return 0;
 }
