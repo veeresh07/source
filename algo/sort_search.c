@@ -78,7 +78,9 @@ int main()
     printf("\n");
     int left =0;
     int right = arr_size-1;
-    int key = 1;
+    int key = 0;
+    printf("Provide key to find");
+    scanf("%d",&key);
     int key_location = binary_search(arr,left,right,key);
     if(key_location < 0)
     {
