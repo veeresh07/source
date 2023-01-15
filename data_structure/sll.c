@@ -49,7 +49,7 @@ node_t * add_head(node_t *start, int data)
 	return start;
 }
 
-/* this funtion will print list from head to tail */
+/* this function will print list from head to tail */
 void print_list(node_t * start)
 {
 	printf("entered function: %s\n",__FUNCTION__);
@@ -167,7 +167,7 @@ node_t * delete_head(node_t *start)
 	if(start->next==NULL)
 	{
 		printf("node start is only node present and will be delted\n");
-		start=NULL;
+		//start=NULL;
 		free(start);
 		return NULL;
 	}
@@ -192,7 +192,7 @@ node_t * delete_tail(node_t *start)
 	if(start->next==NULL)
 	{
 		printf("node start is only node present and will be delted\n");
-		start=NULL;
+		//start=NULL;
 		free(start);
 		return NULL;
 	}
@@ -205,7 +205,7 @@ node_t * delete_tail(node_t *start)
 		current_node=current_node->next;
 	}
 	temp_node->next=NULL;
-	current_node=NULL;
+	//current_node=NULL;
 	free(current_node);
 	printf("exiting function: %s\n\n",__FUNCTION__);
 	return start;
@@ -226,7 +226,7 @@ node_t *delete_key(node_t *start, int key)
 		if(start->data==key)
 		{
 			printf("key %d found, it will be deleted\n", key);
-			start=NULL;
+			//start=NULL;
 			free(start);
 			printf("exiting function: %s\n\n",__FUNCTION__);
 			return NULL;
@@ -239,7 +239,7 @@ node_t *delete_key(node_t *start, int key)
 		node_t *temp_node;
 		temp_node = start;
 		start=start->next;
-		temp_node = NULL;
+		//temp_node = NULL;
 		free(temp_node);
 		printf("exiting function: %s\n\n",__FUNCTION__);
 		return start;
@@ -255,7 +255,7 @@ node_t *delete_key(node_t *start, int key)
 		if(current_node->data==key)
 		{
 			temp_node->next=current_node->next;
-			current_node=NULL;
+			//current_node=NULL;
 			free(current_node);
 			printf("exiting function: %s\n\n",__FUNCTION__);
 			return start;
