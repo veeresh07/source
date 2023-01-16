@@ -25,9 +25,9 @@ int main()
 {
 	int n = 0, k = 0;
 
-	printf("enetr number: ");
+	printf("enter number to be changed: ");
 	scanf("%d",&n);
-	printf("enetr bit position to be changed: ");
+	printf("enter bit position to be changed: ");
 	scanf("%d",&k);
 	printf("%d with %d-th bit Set: %d\n",
 		n, k, setBit(n, k));
